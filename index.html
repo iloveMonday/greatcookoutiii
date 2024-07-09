@@ -10,7 +10,7 @@
 <body>
 <div id="form-box">
     
-        <form method="POST" action="mailto: anthonyrichards.co.uk@gmail.com" subject="my humble request">
+        <form action="" subject="my humble request">
             <div id="personal">
                 <fieldset class="personal">
                     <label id="name-label">Who Am I Speaking With?</label> <br>
@@ -75,23 +75,45 @@
                     </div>
                      
                     <div id="nights-box">
-                        <input type="range" min="0" max="1" value="0"   id="nights-slider">
+                        <input type="range" min="0" max="2" value="0"   id="nights-slider">
                         <div id="nights-visual"></div>
                      </div>
                      <label for="nights">How Many Nights Will You Be Staying With Us?</label>
-                     <br><br>
-                     <div id="sleepover" class="hidden">
-                         <div id="breakfast">
+                     <br>
+                     <div id="sleepover">
+                         <div id="breakfast" class="hidden">
+                            <br>
                              <label>Will You Want Breakfast?</label><br>
                              <select id="dropdown">
                              <option value="">(select one)</option>
+                             <option value="idk">idk</option>
                              <option value="all-good">Yes, but don't worry about it</option>
                              <option value="worried">Yes, but I'm worried about it</option>
                              <option value="cook">Yes, I'll cook for everyone</option>
                              <option value="no">I don't do breakfast</option>
                              <option>I Already Am</option>
-                                                 </select>
+                            </select><br><br>
                          </div>
+                        <div id="maybe" class="hidden">
+                            <label>Why Maybe?</label><br>
+                            <select id="maybe-select">
+                            <option value="">(select one)</option>
+                            <option value="all-good">idk</option>
+                            <option value="all-good">don't worry about it</option>
+                            <option value="worried">I'm worried about it</option>
+                            <option value="cook">yes, I'll cook for everyone</option>
+                            <option value="no">I'm on call</option>
+                            <option value="no">I'm on a new medication</option>
+                            <option value="no">I'm already there</option>
+                            <option value="no">take a look around</option>
+                            <option value="no">I'm the whisper in the wind</option>
+                            <option value="penny">I'm the shadow of a clown</option>
+                            <option>I already am</option>
+                           </select>
+                        </div>
+                        <div id="pennywisehunk" class="hidden">
+                            <img src="./media/pennywisehunk.jpg" alt="sexypennywise" width="100%">
+                        </div>
                      </div>
                 </fieldset>
             </div>
@@ -179,6 +201,36 @@
     
     <button id="submit">submish</button>
         </form>
+
+
+        <div id="info">
+            <form>
+                <h1>to: Nneka & Toni</h1>
+        
+                <div id="from">
+                    <label for="iname">from:</label>
+                    <!-- <input type="text" id="name" name="user_name"/> -->
+                    <span id="iname"></span>
+                </div>
+                <div id="iemergency">
+                    <label for="iemergency"></label>
+                </div>
+        
+                <div id="reply">
+                    <label for="mail">reply:</label>
+                    <input type="email" id="mail" name="user_email"/>
+                </div>
+        
+                <div id="message">
+                    <label for="message">Your message:</label>
+                    <textarea name="user_message" id="message"></textarea>
+                </div>
+        
+                <div class="button">
+                    <button type="submit">Send it</button>
+                </div>
+            </form>
+        </div>
 </div>
     
 </body>

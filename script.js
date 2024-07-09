@@ -1,3 +1,13 @@
+function rand(){
+    return Math.floor(Math.random() * 10);
+}
+
+function changeClass(id, cl){
+    let item = document.getElementById(id);
+    item.className = cl;
+}
+
+
 let sub = document.getElementById("sub");
 let unsub = document.getElementById("unsub");
 let subExtra = document.getElementById("sub-ex");
@@ -57,6 +67,7 @@ let guestSlider = document.getElementById("guest-slider");
 // guestOutput.innerHTML = guestSlider.value;
 let nightsSlider = document.getElementById("nights-slider");
 let nightsVisual = document.getElementById("nights-visual");
+let maybe = document.getElementById("maybe-select");
 
 guestSlider.oninput = function () {
   guestVisual.innerHTML = "";
@@ -66,39 +77,30 @@ guestSlider.oninput = function () {
     img.src = "./corn.svg";
     img.className = "guest-corn";
     guestVisual.appendChild(img);
-    // let img = document.createElement("svg");
-    // img.xmlns = "./corn.svg";
-    // img.className = "guest-corn";
-    // guestVisual.appendChild(img);
   }
 };
 
-function rand(){
-    return Math.floor(Math.random() * 10);
-}
-
-
 guestBox.addEventListener("click",(e) =>{
     let x = rand();
-    // e.target.style.width = "27px"
     e.target.src = `./icons/${x}.svg`
-    e.target.style.fill = "red";
-    e.target.backgroundColor = "red"
-    console.log(rand(), rand(), rand())
 })
 
 
-
-
 nightsSlider.oninput = function () {
+    if (this.value < 2){
   nightsVisual.innerHTML = `${this.value} Nights`;
-(this.value == 1) ? changeClass("sleepover", "") 
-    : changeClass("sleepover", "hidden"); 
-
+(this.value == 1) ? changeClass("breakfast", "") 
+    : changeClass("breakfast", "hidden");
+    changeClass("maybe", "hidden") 
+    changeClass("pennywisehunk", "hidden")
+    }
+    else {nightsVisual.innerHTML = "idk maybe";
+        changeClass("maybe", "")    
+    }
 };
 
-function changeClass(id, cl){
-    let item = document.getElementById(id);
-    item.className = cl;
-}
-
+maybe.addEventListener("click", () => {
+    if (maybe.value == "penny"){
+        changeClass("pennywisehunk", "")
+    }
+})
