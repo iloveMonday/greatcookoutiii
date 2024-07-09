@@ -32,7 +32,7 @@ input.pert{
  .guest-corn{
    width: 25px;
    filter: invert(85%) sepia(81%) saturate(453%) hue-rotate(359deg) brightness(95%) contrast(91%);
-   fill: #e7e738;
+   /* fill: #e7e738; */
  }
 
  #guest-note{

@@ -48,6 +48,8 @@ subAdd.addEventListener("click", () =>{
 
 
 
+
+
 let guestBox = document.getElementById("guest-box");
 let guestVisual = document.getElementById("guest-visual");
 // let guestOutput = document.getElementById("slider-value");
@@ -64,8 +66,29 @@ guestSlider.oninput = function () {
     img.src = "./corn.svg";
     img.className = "guest-corn";
     guestVisual.appendChild(img);
+    // let img = document.createElement("svg");
+    // img.xmlns = "./corn.svg";
+    // img.className = "guest-corn";
+    // guestVisual.appendChild(img);
   }
 };
+
+function rand(){
+    return Math.floor(Math.random() * 10);
+}
+
+
+guestBox.addEventListener("click",(e) =>{
+    let x = rand();
+    // e.target.style.width = "27px"
+    e.target.src = `./icons/${x}.svg`
+    e.target.style.fill = "red";
+    e.target.backgroundColor = "red"
+    console.log(rand(), rand(), rand())
+})
+
+
+
 
 nightsSlider.oninput = function () {
   nightsVisual.innerHTML = `${this.value} Nights`;
@@ -78,6 +101,4 @@ function changeClass(id, cl){
     let item = document.getElementById(id);
     item.className = cl;
 }
-
-
 
