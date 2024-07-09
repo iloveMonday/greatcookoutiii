@@ -3,39 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css" />
-    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css"/>
+    <script src="./script.js" defer></script>
     <title>I Saw You (at the barbeque)</title>
 </head>
 <body>
+<div id="form-box">
+    
+        <form method="POST" action="mailto: anthonyrichards.co.uk@gmail.com" subject="my humble request">
+            <div id="personal">
+                <fieldset class="personal">
+                    <label id="name-label">Who Am I Speaking With?</label> <br>
+                    <input id="name" class="pert" required type="text" placeholder="Belinda Pencil"></input>
+                    <br><br>
+    
+                    <label for="emergency">Emergency Contact (instagram only):</label><br>
+                    <span>@</span>
+                    <input type="text" class="pert">
+                    <br><br>
+    
+    
+                    <label id="email-label" for="email">What is Your Email? (please skip):</label> <br>
+                    <input id="email" class="pert" type="email" placeholder="absolutelydonotskip@billy.net"></input>
+                    <br><br>
+    
+                    <label for="confirm-email">Please Confirm Your Email:</label><br>
+                    <input type="radio" id="yes" value="yes" name="confirm-email">
+                    <label for="">that is my email.</label><br>
+                    <input type="radio" id="never" value="never" name="confirm-email">
+                    <label for="">I've never seen that email before in my life.</label><br>
+                    <input type="radio" id="help" value="help" name="confirm-email">
+                    <label for="help">sure could use a little help remembering...</label>
+                    <br><br>
+    
+                    <div id="sub-box">
+                        <input type="checkbox" id="sub" checked>
+                        <label for="sub">Subscribe?</label><br>
+                        <div id="unsub-box">
+                            <input type="checkbox" id="unsub">
+                            <label for="unsub">Unsubscribe?</label>
+                            <input type="checkbox" id="sub-ex" checked class="hidden">
+                            <label for="sub" id ="sub-ex-lab" class="hidden">Subscribed</label>
+                        </div>
+                        <div id="endless-subs">                        </div>
+                        <div id="addSubBox" class=" hidden">
+                            <input type="checkbox" id="sub-add">
+                            <label for="sub">Subscribed</label><br>
+                        </div>
+                    </div>
 
-    <form method="POST" action="mailto: anthonyrichards.co.uk@gmail.com" subject="my humble request">
+                </fieldset>
+            </div>
+    
+            <div id="stay">
+                <fieldset class="stay">
+                    <legend>About Your Stay</legend>
+
+                    
+                    <label for="additional">How Many Add'l Guests Will You Be Bringing?</label>
+                    <span id="guest-note">Select All That are Gluten-Free, Vegan, Gemini, Accomplished or Unwed.
+                        </span>
+                    <div class="add-guests-slider">
+                        <input type="range" min="0" max="333" value="2" class="slider" id="guest-slider">
+                     </div>
+
+                     <div id="guest-box">
+                        <div id="guest-visual"></div>
+                        <!-- <p class="value">Value: <span id="slider-value"></span></p> -->
+                    </div>
+                     
+                    <div id="nights-box">
+                        <input type="range" min="0" max="1" value="0"   id="nights-slider">
+                        <div id="nights-visual"></div>
+                     </div>
+                     <label for="nights">How Many Nights Will You Be Staying With Us?</label>
+                     <br><br>
+                     <div id="sleepover" class="hidden">
+                         <div id="breakfast">
+                             <label>Will You Want Breakfast?</label><br>
+                             <select id="dropdown">
+                             <option value="">(select one)</option>
+                             <option value="all-good">Yes, but don't worry about it</option>
+                             <option value="worried">Yes, but I'm worried about it</option>
+                             <option value="cook">Yes, I'll cook for everyone</option>
+                             <option value="no">I don't do breakfast</option>
+                             <option>I Already Am</option>
+                                                 </select>
+                         </div>
+                     </div>
+                </fieldset>
+            </div>
+
+            <div id="bring">
+                <fieldset class="bring">
+                    <legend>For You I Will Bring...</legend>
+                    <div class="flame">
+                        <label for="flame">To Set Upon the Open Flame:</label>
+                            <label for="meat"><input type="checkbox" id="meat">land meat</label>
+                            <label for="seafood"><input type="checkbox" id="seafood">a lil somethin' from the sea</label>
+                            <label fors="vegetable"><input type="checkbox" id="vegetable">a vegetable</label>
+                            <label for="vegmeat"><input type="checkbox" id="vegmeat">tofu pup (and allies)</label>
+                            <label for="mushroom"><input type="checkbox" id="mushroom">the fruiting body of a fungus</label>
+                    </div>
+                    <br>
+                    <div class="table">
+                        <label for="table">To Set Upon the Open Table:</label>
+                        <label><input type="checkbox" class="inline">a chip</label>
+                        <label><input type="checkbox" class="inline">a dip</label>
+                        <label><input type="checkbox" class="inline">a just & verdant salad</label>
+                        <label><input type="checkbox" class="inline">mayonnaise-based salad</label>
+                        <label><input type="checkbox" class="inline">candy for my wife</label>
+                        <label><input type="checkbox" class="inline">crüdite</label>
+                        <label><input type="checkbox" class="inline">bon filet</label>
+                        <label><input type="checkbox" class="inline">blue sorbet</label>
+                        <label><input type="checkbox" class="inline">dorian gray (2009, horror/fantasy)</label>
+                    </div>
+                    <br>
+                    <div class="liquid">
+                        <label for="table">Liquid Matter in an Honest State:</label>
+                        <label><input type="checkbox" class="inline">Bee-eer</label>
+                        <label><input type="checkbox" class="inline">Seltzer (hardt)</label>
+                        <label><input type="checkbox" class="inline">Seltzer (sofdt)</label>
+                        <label><input type="checkbox" class="inline">nespressa</label>
+                        <label><input type="checkbox" class="inline">another</label>
+                    </div>
+                    <br>
+                    <div class="misc">
+                        <label for="misc">Misciloneus</label>
+                        <label for=""><input type="checkbox" class="inline" id="">a reasonable dog</label>
+                        <label for=""><input type="checkbox" class="inline" id="">an unconscionable dog</label>
+                        <label for=""><input type="checkbox" class="inline" id="">an inscrutable card game</label>
+                        <label for=""><input type="checkbox" class="inline" id="">firewood</label>
+                        <label for=""><input type="checkbox" class="inline" id="">ice</label>
+                        <label for=""><input type="checkbox" class="inline" id="">chair(s)</label>
+                        <label for=""><input type="checkbox" class="inline" id="">ice</label>
+                        <label for=""><input type="checkbox" class="inline" id="">performance enhancing substance</label>
+                        <label for=""><input type="checkbox" class="inline" id="">an enduring, substantial performance</label>
+                        <label for=""><input type="checkbox" class="inline" id="">that smile. that damn smile.</label>
+                        <label for=""><input type="checkbox" class="inline" id="">a glorious purpose</label>
+                        <label for=""><input type="checkbox" class="inline" id="">a bowl I will forget</label>
+                        <label for=""><input type="checkbox" class="inline" id="">plates/napkins/forks/knifs</label>
+                    </div>
+                </fieldset>
+            </div>
+    
+    <div id="tinder">
 
 
 
-<div id="rsvp">
+
+
+    </div>
     
-            <fieldset id="rsvp">
-                <legend>Finally, your honest-to-goodness RSVP:</legend>
-                <input type="radio" id="yes" value="yes" name="rsvp">
-                <label for="">I am absolutely coming and all the above information is pertinent.</label><br>
+    <div id="rsvp">
+                <fieldset class="rsvp">
+                    <legend>Finally, your honest-to-goodness RSVP:</legend>
+                    <input type="radio" id="yes" value="yes" name="rsvp">
+                    <label for="yes">I am absolutely coming and all the above information is pertinent.</label><br>
     
-                <input type="radio" id="maybe" value="maybe" name="rsvp">
-                <label for="">Realistically, I'm a maybe.</label><br>
+                    <input type="radio" id="maybe" value="maybe" name="rsvp">
+                    <label for="maybe">Realistically, I'm a maybe.</label><br>
     
-                <input type="radio" id="9" value="9" name="rsvp">
-                <label for="">Realistically, I'm a 9.</label><br>
+                    <input type="radio" id="9" value="9" name="rsvp">
+                    <label for="9">Realistically, I'm a 9.</label><br>
     
-                <input type="radio" id="good-enough" value="good-enough" name="rsvp">
-                <label for="">Being "good enough" is never a prerequisite, look around you.</label><br>
+                    <input type="radio" id="good-enough" value="good-enough" name="rsvp">
+                    <label for="good-enough">Being "good enough" is never a prerequisite, look around you.</label><br>
     
-                <input type="radio" id="no" value="no" name="rsvp">
-                <label for="">im not coming im was never coming</label><br>
-            </fieldset>
+                    <input type="radio" id="no" value="no" name="rsvp">
+                    <label for="no">im not coming im was never coming</label><br>
+                </fieldset>
+    </div>
+    
+    <button id="submit">submish</button>
+        </form>
 </div>
-
-<button id="submit">submish</button>
-    </form>
     
 </body>
 </html>

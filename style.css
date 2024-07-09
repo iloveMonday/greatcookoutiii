@@ -1,3 +1,88 @@
-#rsvp{
-    color: red;
+@font-face {font-family: "chiller"; src: url("./fonts/chiller.ttf")}
+@font-face {font-family: "oddballz"; src: url("./fonts/oddballz.ttf")}
+@font-face {font-family: "comme"; src: url("./fonts/Comme-Regular.ttf")}
+@font-face {font-family: "gen"; src: url("./fonts/Gen-Light.otf")}
+
+
+body{
+   font-family: 'gen';
+   font-size: 1rem;
+   background-color: rgb(30, 212, 152);
+}
+
+.nahb {
+    border:0 none;
+ }
+
+input.pert{
+    width: 90%;
+    border-radius: 4px;
+ }
+
+ .bring > * {
+    display: flex;
+    flex-direction: column;
+ }
+
+ #endless-subs{
+   display: flex;
+   flex-direction: column;
+}
+
+ .guest-corn{
+   width: 25px;
+   filter: invert(85%) sepia(81%) saturate(453%) hue-rotate(359deg) brightness(95%) contrast(91%);
+   fill: #e7e738;
+ }
+
+ #guest-note{
+   font-size: .60rem;
+   color: red;
+ }
+
+ .hidden{
+   display: none;
+ }
+
+ legend{
+   font-family: 'oddballz';
+ }
+
+
+#nights-box{
+   font-family: 'chiller';
+   font-size: 48px;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   gap: 25%;
+}
+
+ #nights-slider{
+   writing-mode: vertical-lr;
+ }
+
+ .slider {
+   /* -webkit-appearance: none; */
+   width: 100%;
+   height: 15px;
+   border-radius: 5px;
+   background: #d3d3d3;
+   outline: none;
+   opacity: 0.7;
+   transition: opacity 0.15s ease-in-out;
+}
+
+.slider:hover {
+   opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+   -webkit-appearance: none;
+   appearance: none;
+   width: 25px;
+   height: 25px;
+   border-radius: 50%;
+   background: #4CAF50;
+   cursor: pointer;
 }
