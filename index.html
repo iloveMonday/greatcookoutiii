@@ -8,9 +8,10 @@
     <title>I Saw You (at the barbeque)</title>
 </head>
 <body>
-<div id="form-box">
+    <img src="./media/cookout2024.jpg" alt="cookout-2024-invite" id="banner">
+
     
-        <form action="" subject="my humble request">
+        <!-- <form action="" subject="my humble request"> -->
             <div id="personal">
                 <fieldset class="personal">
                     <label id="name-label">Who Am I Speaking With?</label> <br>
@@ -18,8 +19,8 @@
                     <br><br>
     
                     <label for="emergency">Emergency Contact (instagram only):</label><br>
-                    <span>@</span>
-                    <input type="text" class="pert">
+                    <span class="at">@</span>
+                    <input type="text" id="emergency" class="pert">
                     <br><br>
     
     
@@ -60,7 +61,7 @@
                     <legend>About Your Stay</legend>
 
                     
-                    <label for="additional">How Many Add'l Guests Will You Be Bringing?</label>
+                    <label for="additional">How Many Add'l Guests Will You Be Bringing?</label><br>
                     <span id="guest-note">Select All That are Gluten-Free, Vegan, Gemini, Accomplished or Unwed.
                         </span>
                     <div class="add-guests-slider">
@@ -76,7 +77,7 @@
                      
                     <div id="nights-box">
                         <input type="range" min="0" max="2" value="0"   id="nights-slider">
-                        <div id="nights-visual"></div>
+                        <div id="nights-visual">0 Nights</div>
                      </div>
                      <label for="nights">How Many Nights Will You Be Staying With Us?</label>
                      <br>
@@ -122,7 +123,7 @@
                 <fieldset class="bring">
                     <legend>For You I Will Bring...</legend>
                     <div class="flame">
-                        <label for="flame">To Set Upon the Open Flame:</label>
+                        <label for="flame" class="topic">To Set Upon the Open Flame:</label>
                             <label for="meat"><input type="checkbox" id="meat">land meat</label>
                             <label for="seafood"><input type="checkbox" id="seafood">a lil somethin' from the sea</label>
                             <label fors="vegetable"><input type="checkbox" id="vegetable">a vegetable</label>
@@ -131,7 +132,7 @@
                     </div>
                     <br>
                     <div class="table">
-                        <label for="table">To Set Upon the Open Table:</label>
+                        <label for="table" class="topic">To Set Upon the Open Table:</label>
                         <label><input type="checkbox" class="inline">a chip</label>
                         <label><input type="checkbox" class="inline">a dip</label>
                         <label><input type="checkbox" class="inline">a just & verdant salad</label>
@@ -144,7 +145,7 @@
                     </div>
                     <br>
                     <div class="liquid">
-                        <label for="table">Liquid Matter in an Honest State:</label>
+                        <label for="table" class="topic">Liquid Matter in an Honest State:</label>
                         <label><input type="checkbox" class="inline">Bee-eer</label>
                         <label><input type="checkbox" class="inline">Seltzer (hardt)</label>
                         <label><input type="checkbox" class="inline">Seltzer (sofdt)</label>
@@ -153,7 +154,7 @@
                     </div>
                     <br>
                     <div class="misc">
-                        <label for="misc">Misciloneus</label>
+                        <label for="misc" class="topic">Misciloneus</label>
                         <label for=""><input type="checkbox" class="inline" id="">a reasonable dog</label>
                         <label for=""><input type="checkbox" class="inline" id="">an unconscionable dog</label>
                         <label for=""><input type="checkbox" class="inline" id="">an inscrutable card game</label>
@@ -163,7 +164,7 @@
                         <label for=""><input type="checkbox" class="inline" id="">ice</label>
                         <label for=""><input type="checkbox" class="inline" id="">performance enhancing substance</label>
                         <label for=""><input type="checkbox" class="inline" id="">an enduring, substantial performance</label>
-                        <label for=""><input type="checkbox" class="inline" id="">that smile. that damn smile.</label>
+                        <label for=""><input type="checkbox" class="inline" id="" checked>that smile. that damn smile.</label>
                         <label for=""><input type="checkbox" class="inline" id="">a glorious purpose</label>
                         <label for=""><input type="checkbox" class="inline" id="">a bowl I will forget</label>
                         <label for=""><input type="checkbox" class="inline" id="">plates/napkins/forks/knifs</label>
@@ -179,24 +180,37 @@
 
     </div>
     
-    <div id="rsvp">
-                <fieldset class="rsvp">
+    <div class="rsvp">
+                <fieldset id="rsvp" aria-errormessage="errormsg" required>
                     <legend>Finally, your honest-to-goodness RSVP:</legend>
-                    <input type="radio" id="yes" value="yes" name="rsvp">
+                    <input type="radio" id="yes" value="coming" name="rsvp">
                     <label for="yes">I am absolutely coming and all the above information is pertinent.</label><br>
     
-                    <input type="radio" id="maybe" value="maybe" name="rsvp">
+                    <input type="radio" id="maybe" value="maybe coming" name="rsvp">
                     <label for="maybe">Realistically, I'm a maybe.</label><br>
     
-                    <input type="radio" id="9" value="9" name="rsvp">
+                    <input type="radio" id="9" value="hot and also coming" name="rsvp">
                     <label for="9">Realistically, I'm a 9.</label><br>
     
-                    <input type="radio" id="good-enough" value="good-enough" name="rsvp">
+                    <input type="radio" id="good-enough" value="good enough to be coming" name="rsvp">
                     <label for="good-enough">Being "good enough" is never a prerequisite, look around you.</label><br>
     
-                    <input type="radio" id="no" value="no" name="rsvp">
+                    <input type="radio" id="no" value="not coming" name="rsvp">
                     <label for="no">im not coming im was never coming</label><br>
                 </fieldset>
+    </div>
+
+    <div id="feedback">
+        <p>For the past two years you've dutifully responded s'il vous plaît
+            only to have your candor and toil scrubbed from this Earth. While
+            I am certain there is a desire to point fingers at me for the blood
+            that has been shed, I assure you, this time, salvation can be yours.
+            The rules are simple: smash that red button, screenshot the letter
+            below, and text it to Toni at 508.410.8286. <br><br>
+            But there are no shortcuts in life so before you do, I request your
+            frankness once more: did u like my website?
+        </p>
+        <textarea name="" id="" cols="30" rows="5"></textarea>
     </div>
     
     <button id="submit">submish</button>
@@ -204,32 +218,11 @@
 
 
         <div id="info">
-            <form>
-                <h1>to: Nneka & Toni</h1>
-        
-                <div id="from">
-                    <label for="iname">from:</label>
-                    <!-- <input type="text" id="name" name="user_name"/> -->
-                    <span id="iname"></span>
-                </div>
-                <div id="iemergency">
-                    <label for="iemergency"></label>
-                </div>
-        
-                <div id="reply">
-                    <label for="mail">reply:</label>
-                    <input type="email" id="mail" name="user_email"/>
-                </div>
-        
-                <div id="message">
-                    <label for="message">Your message:</label>
-                    <textarea name="user_message" id="message"></textarea>
-                </div>
-        
-                <div class="button">
-                    <button type="submit">Send it</button>
-                </div>
-            </form>
+            <h1>Dear Nneka & Toni,</h1>
+            <p id="info-body">test zone</p>
+            <p class="salutation">With Love,
+                </p>
+            <p id="iname"></p>
         </div>
 </div>
     
