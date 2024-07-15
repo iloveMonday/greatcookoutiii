@@ -286,6 +286,7 @@ footer{
 .slider::-webkit-slider-thumb,
 #nights-slider::-webkit-slider-thumb {
    -webkit-appearance: none;
+   writing-mode: vertical-lr;
    appearance: none;
    width: 25px;
    height: 25px;
