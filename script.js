@@ -175,22 +175,26 @@ function displayRSVP(){
     let nighty = slider();
     let bring = getBring();
     let lastWord = comment.value;
+    let emer = emergency.value
     if (name.value == ""){
         alert("what is your name my dear boy?")
         return
     }
     if(comment.value == ""){
-        lastWord = "you look great";
+        lastWord = "you look great.";
+    }
+    if(emergency.value == ""){
+        emer = "http.kate.biz"
     }
 
     info.innerHTML = `Hey thanks for the invite! 
         This is my RSVP to inform you that I am ${rsvp.value} to your cookout.
         I plan on bringing ${bring} 
         and, of course, my signature wicked 'tude. 
-        I  probably ${nighty} be wanting to sleep over, and if I do I am aware there is but 1 couch, and even fewer pillows. I am prepared. 
+        I  probably ${nighty} be wanting to sleep over, and if I do I am aware there is but 1 couch, and even fewer pillows. I am prepared; both for these obstacles and to have the time of my life. 
         With me I will be bringing about ${guestSlider.value} more friends who will surely enrich the social climate of this gathering. 
         As always, I can be reached at my email ${email.value} and, to cover all my bases, 
-        you may contact @${emergency.value} incase of emergency. 
+        you may contact @${emer} incase of emergency. 
         Oh, and one last thing: ${lastWord}`;
     iname.innerHTML = name.value;
 
