@@ -11,17 +11,19 @@ let name = document.getElementById("name");
 let emergency = document.getElementById("emergency");
 let email = document.getElementById("email");
 let rsvpForm = document.getElementById("rsvp");
-// let rsvp = rsvpForm.querySelector('input:checked');
-// let  = document.getElementById("");
-// let  = document.getElementById("");
-// let  = document.getElementById("");
-// let  = document.getElementById("");
 let sub = document.getElementById("sub");
 let unsub = document.getElementById("unsub");
 let subExtra = document.getElementById("sub-ex");
 let subExtraLab = document.getElementById("sub-ex-lab");
 let subAdd = document.getElementById("sub-add");
 let endlessSub = document.getElementById("endless-subs")
+
+let guestBox = document.getElementById("guest-box");
+let guestVisual = document.getElementById("guest-visual");
+let guestSlider = document.getElementById("guest-slider");
+let nightsSlider = document.getElementById("nights-slider");
+let nightsVisual = document.getElementById("nights-visual");
+let maybe = document.getElementById("maybe-select");
 
 sub.addEventListener("click", () =>{
 if (sub.checked == false){
@@ -62,28 +64,13 @@ subAdd.addEventListener("click", () =>{
     });
 
 
-
-
-
-
-
-
-let guestBox = document.getElementById("guest-box");
-let guestVisual = document.getElementById("guest-visual");
-// let guestOutput = document.getElementById("slider-value");
-let guestSlider = document.getElementById("guest-slider");
-// guestOutput.innerHTML = guestSlider.value;
-let nightsSlider = document.getElementById("nights-slider");
-let nightsVisual = document.getElementById("nights-visual");
-let maybe = document.getElementById("maybe-select");
-
 guestSlider.oninput = function () {
   guestVisual.innerHTML = "";
 
   for (let i = 0; i < this.value; i++) {
     let img = document.createElement("img");
     img.src = "./corn.svg";
-    img.className = "guest-corn";
+    img.className = "guest-corn"
     guestVisual.appendChild(img);
   }
 };
@@ -91,28 +78,51 @@ guestSlider.oninput = function () {
 guestBox.addEventListener("click",(e) =>{
     let x = rand();
     e.target.src = `./icons/${x}.svg`
+    e.target.className = randomColor();
 })
 
+function randomColor(){
+    let x = rand();
+    if (x == 0){
+        return "hotpink"
+    }
+    if (x == 1){
+        return "blue"
+    }
+    if (x ==2){
+        return "green"
+    }
+    if (x==3){
+        return "hotpurple"
+    }
+    if (x==4){
+        return "red"
+    }
+    if (x==5){
+        return "glacier"
+    }
+    if (x==6){
+        return "pea"
+    }
+    if (x==7){
+        return "white"
+    }
+    if (x==8){
+        return "orange"
+    }
+    if (x==9){
+        return "teal"
+    }
+    else{
+        return "guest-corn"
+    }
+
+}
 
 
 nightsSlider.addEventListener("input", () =>{
     slider();
 })
-
-
-//nightsSlider.oninput =  function () {
-//     if (this.value < 2){
-//   nightsVisual.innerHTML = `${this.value} Nights`;
-
-//     (this.value == 1) ? changeClass("breakfast", "") 
-//         : changeClass("breakfast", "hidden");
-//         changeClass("maybe", "hidden") 
-//         changeClass("pennywisehunk", "hidden")
-//     }
-//     else {nightsVisual.innerHTML = "idk maybe";
-//         changeClass("maybe", "")    
-//     }
-// };
 
 function slider(){
     if (nightsSlider.value == 0){
@@ -143,68 +153,56 @@ maybe.addEventListener("click", () => {
 })
 
 
-function addRSVP(){
-     let newGuest = new Guest(name)
+function getBring(){
+    let box = document.getElementsByName("box")
+    let boxChecked = [];
+
+    for (let i = 0; i < box.length; i++){
+        if (box[i].checked){
+            boxChecked.push(box[i].value);
+        }
+    }
+    return boxChecked.join(", ");
 }
 
+
 function displayRSVP(){
+    let infoBox = document.getElementById("info");
     let info = document.getElementById("info-body");
     let iname = document.getElementById("iname");
     let rsvp = rsvpForm.querySelector('input:checked');
+    let comment = document.getElementById("comment");
     let nighty = slider();
-    // let  = document.getElementById("")
+    let bring = getBring();
+    let lastWord = comment.value;
+    if (name.value == ""){
+        alert("what is your name my dear boy?")
+        return
+    }
+    if(comment.value == ""){
+        lastWord = "you look great";
+    }
 
-    info.innerHTML = `Thanks for the invite to your party! 
+    info.innerHTML = `Hey thanks for the invite! 
         This is my RSVP to inform you that I am ${rsvp.value} to your cookout.
-        I plan on bringing (#checklist) 
-        and, of course, (that smile.) 
+        I plan on bringing ${bring} 
+        and, of course, my signature wicked 'tude. 
         I  probably ${nighty} be wanting to sleep over, and if I do I am aware there is but 1 couch, and even fewer pillows. I am prepared. 
         With me I will be bringing about ${guestSlider.value} more friends who will surely enrich the social climate of this gathering. 
-        As always, I can be reached at ${email.value} and, to cover all my bases, 
-        you may contact @${emergency.value} incase of emergency.`;
+        As always, I can be reached at my email ${email.value} and, to cover all my bases, 
+        you may contact @${emergency.value} incase of emergency. 
+        Oh, and one last thing: ${lastWord}`;
     iname.innerHTML = name.value;
 
-
+    infoBox.classList.remove("hidden");
 }
 
-
-
-
-
-
-
-class Guest{
-    constructor(name, emergency, email, guests, nights, rsvp){
-        this.name = name;
-        this.emergency = emergency;
-        this.email = email;
-        this.guests = guests;
-        this.nights = nights;
-        this.bring = [];
-        this.rsvp = rsvp;
-        this.info = function (){
-            return
-        }
-        this.bringString = function(){
-            return
-        }
-
-        // getName(){
-        //     return this.name;
-        // }
-
-        // getBody(){
-        //     return 
-        // }
-    }
-}
 
 
 let submit = document.getElementById("submit");
 
-
-
 submit.addEventListener("click", () => {
     event.preventDefault();
     displayRSVP();
+
 })

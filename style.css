@@ -22,10 +22,6 @@ body{
     border:0 none;
  }
 
-/* input.pert{
-    width: 90%;
-    border-radius: 4px;
- } */
 
  input[type="text"],
  input[type="email"],
@@ -34,6 +30,24 @@ body{
    background-color: #0a0a23;
    color: whitesmoke;
    width: 90%;
+   border: 1px solid #0a0a23;
+ }
+
+ input:focus {
+   outline: none !important;
+   border: 2px solid grey;
+   box-shadow: 0 0 10px #719ECE;
+ }
+
+ input[type="checkbox"]{
+   /* accent-color: #e7e738; */
+   accent-color: #4CAF50;
+ }
+
+select:focus {
+   outline: none !important;
+   border: 2px solid red;
+   box-shadow: 0 0 10px #719ECE;
  }
 
  .at{
@@ -72,11 +86,67 @@ body{
    justify-content: center;
 }
 
+#feedback p{
+   width: 95%;
+   text-align: center;
+}
+
  .guest-corn{
    width: 25px;
    filter: invert(85%) sepia(81%) saturate(453%) hue-rotate(359deg) brightness(95%) contrast(91%);
    /* fill: #e7e738; */
  }
+
+ .hotpink{
+   width: 25px;
+   filter: invert(23%) sepia(81%) saturate(3963%) hue-rotate(326deg) brightness(100%) contrast(98%);
+ }
+
+ .blue{
+   width: 25px;
+   filter: invert(61%) sepia(85%) saturate(5012%) hue-rotate(164deg) brightness(99%) contrast(101%);
+ }
+
+ .green{
+   width: 25px;
+   filter: invert(56%) sepia(84%) saturate(345%) hue-rotate(73deg) brightness(90%) contrast(83%);
+ }
+
+ .hotpurple{
+   width: 25px;
+   filter: invert(16%) sepia(96%) saturate(7478%) hue-rotate(284deg) brightness(102%) contrast(95%);
+ }
+
+ .red{
+   width: 25px;
+   filter: invert(15%) sepia(77%) saturate(7495%) hue-rotate(8deg) brightness(101%) contrast(101%);
+ }
+
+ .glacier{
+   width: 25px;
+   filter: invert(68%) sepia(74%) saturate(2063%) hue-rotate(180deg) brightness(97%) contrast(92%);
+ }
+
+ .pea{
+   width: 25px;
+   filter: invert(67%) sepia(23%) saturate(6215%) hue-rotate(33deg) brightness(100%) contrast(102%);
+ }
+
+ .white{
+   width: 25px;
+   filter: invert(90%) sepia(19%) saturate(108%) hue-rotate(149deg) brightness(100%) contrast(101%);
+ }
+
+ .orange{
+   width: 25px;
+   filter: invert(69%) sepia(43%) saturate(2886%) hue-rotate(357deg) brightness(99%) contrast(107%);
+ }
+
+ .teal{
+   width: 25px;
+   filter: invert(44%) sepia(91%) saturate(342%) hue-rotate(107deg) brightness(96%) contrast(88%);
+ }
+
 
  #guest-note{
    font-size: .60rem;
@@ -87,12 +157,39 @@ body{
    display: none;
  }
 
+
+ #info{
+   background-color: #4CAF50;
+   /* background: url(./media/parch.png); */
+   /* background-size: 100%; */
+   height: 500px;
+}
+
+#info h1{
+   font-family: 'bybsy';
+   font-size: 24px;
+}
+
  #info-body{
    /* font-family: "bybsy"; */
+   font-size: 14px;
+ }
+
+ .salutation{
+   font-family: 'bybsy';
+   font-size: 24px;
+   text-align: right;
+   margin-top: 0;
+   margin-bottom: 0px;
+   margin-right: 100px;
  }
 
  #iname{
+   text-align: right;
+   margin-top: 0;
+   margin-right: 25px;
    font-family: "playwrite";
+   font-size: 24px;
  }
 
  legend{
@@ -120,17 +217,30 @@ body{
    /* align-items: center; */
  }
 
+ .pnum{
+   background-color: #e7e738;;
+ }
+
+.playme{
+   width: 40%;
+}
+
  #sleepover select{
    width: 100%;
    background-color: #4CAF50;
  }
+
+#breakfast label{
+   color: #c7362c;
+}
 
  .slider {
    /* -webkit-appearance: none; */
    width: 100%;
    height: 15px;
    border-radius: 5px;
-   background: #d3d3d3;
+   /* background: #d3d3d3; */
+   background-color: #4CAF50;
    outline: none;
    opacity: 0.7;
    transition: opacity 0.15s ease-in-out;
@@ -150,17 +260,18 @@ body{
    cursor: pointer;
 }
 
+
 #submit {
 	box-shadow: 3px 4px 0px 0px #8a2a21;
-	background:linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
-	background-color:#c62d1f;
-	border-radius:18px;
-	border:1px solid #d02718;
+	background:linear-gradient(to bottom, #c62d1f 5%, red 100%);
+	background-color:red;
+	border-radius: 100%;
+	border: 1px solid #d02718;
 	display: block;
 	cursor:pointer;
 	color:#ffffff;
-	font-family:Arial;
-	font-size:17px;
+	font-family: 'chiller';
+	font-size: 40px;
 	padding:7px 25px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #810e05;
@@ -179,13 +290,8 @@ body{
 }
 
 .topic{
-   font-size: 1rem;
+   /* font-size: 1rem; */
    color: #c7362c;
+   /* font-family: 'gen'; */
 }
 
-
-#info{
-   background-color: #4CAF50;
-   /* background: url(./media/postcard.jpg); */
-   height: 500px;
-}
