@@ -138,7 +138,7 @@ function slider(){
         return "will";
     }
     else {
-        nightsVisual.innerHTML = "idk maybe";
+        nightsVisual.innerHTML = "idkmaybe";
               changeClass("maybe", "");
               return "may" ;
 
