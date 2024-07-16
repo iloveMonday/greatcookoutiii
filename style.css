@@ -294,8 +294,9 @@ footer{
  }
 
  .pnum{
-   background-color: #e7e738;
-   color: black;
+   /* background-color: #e7e738; */
+   /* background-color: grey; */
+   color: #e7e738;
  }
 
 .playme{
