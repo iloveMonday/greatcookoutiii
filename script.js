@@ -165,41 +165,34 @@ function getBring(){
     return boxChecked.join(", ");
 }
 
+const prompts = [
+    'how can we ensure this party rocks?',
+    'do u like my website?',
+    'what makes your life better?',
+    'where don’t you want to be?',
+    'what if?',
+    'what does success look like?',
+    'how have our past cookouts failed?',
+    'how have you made space in life for what you want?',
+    'fuck, marry, kill?'
+]
 
-function displayRSVP(){
-    let infoBox = document.getElementById("info");
-    let info = document.getElementById("info-body");
-    let iname = document.getElementById("iname");
-    let rsvp = rsvpForm.querySelector('input:checked');
-    let comment = document.getElementById("comment");
-    let nighty = slider();
-    let bring = getBring();
-    let lastWord = comment.value;
-    let emer = emergency.value
-    if (name.value == ""){
-        alert("what is your name my dear boy?")
-        return
-    }
-    if(comment.value == ""){
-        lastWord = "you look great.";
-    }
-    if(emergency.value == ""){
-        emer = "http.kate.biz"
-    }
+function randomPrompt(){
+    const randomIndex = Math.floor(Math.random() * prompts.length);
+    return prompts[randomIndex];}
 
-    info.innerHTML = `Hey thanks for the invite! 
-        This is my RSVP to inform you that I am ${rsvp.value} to your cookout.
-        I know it's totally option, but I plan on bringing ${bring} 
-        and, of course, my signature wicked 'tude. 
-        I  probably ${nighty} be wanting to sleep over, and if I do I am aware there is but 1 couch, and even fewer pillows. I am prepared; both for these obstacles and to have the time of my life. 
-        With me I will be bringing about ${guestSlider.value} more friends who will surely enrich the social climate of this gathering. 
-        As always, I can be reached at my email ${email.value} and, to cover all my bases, 
-        you may contact @${emer} incase of emergency. 
-        Oh, and one last thing: ${lastWord}`;
-    iname.innerHTML = name.value;
 
-    infoBox.classList.remove("hidden");
+function displayPrompt(){
+    let promptBox = document.getElementById("prompt");
+    promptBox.innerHTML = "";
+    promptBox.innerHTML = randomPrompt();
 }
+
+const getPrompt = document.getElementById("get-prompt");
+
+getPrompt.addEventListener("click", () => {
+    displayPrompt();
+})
 
 
 
@@ -278,8 +271,8 @@ let like = document.getElementById("heart-button");
 let dislike = document.getElementById("x-button");
 
 like.addEventListener("click", () =>{
-    addLike(liked, source)
-    console.log(liked);
+    addLike(liked, source);
+    removeItem(images, source);
     displayRandomImage();
 })
 
@@ -290,6 +283,55 @@ dislike.addEventListener("click", () =>{
 
 displayRandomImage();
 
+function displayTinderPicks(likelist){
+    var tinCont = document.getElementById("tinder-friends");
+
+    likelist.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        tinCont.appendChild(img);
+    })
+};
+
+
+function displayRSVP(){
+    document.getElementById("tinder-friends").innerHTML = "";
+    let infoBox = document.getElementById("info");
+    let info = document.getElementById("info-body");
+    let iname = document.getElementById("iname");
+    let rsvp = rsvpForm.querySelector('input:checked');
+    let comment = document.getElementById("comment");
+    let nighty = slider();
+    let bring = getBring();
+    let lastWord = comment.value;
+    let emer = emergency.value
+    if (name.value == ""){
+        alert("what is your name my dear boy?")
+        return
+    }
+    if(comment.value == ""){
+        lastWord = "you look great.";
+    }
+    if(emergency.value == ""){
+        emer = "http.kate.biz"
+    }
+
+    info.innerHTML = `Hey thanks for the invite! 
+        This is my RSVP to inform you that I am ${rsvp.value} to your cookout.
+        I know it's totally optional, but I plan on bringing ${bring} 
+        and, of course, my signature wicked 'tude. 
+        I  probably ${nighty} be wanting to sleep over, and if I do I am aware there is but 1 couch, 
+        and even fewer pillows. I am prepared; both for these obstacles and to have the time of my life. 
+        With me I will be bringing about ${guestSlider.value} more friends who will surely enrich the 
+        social climate of this gathering. 
+        As always, I can be reached at my email ${email.value} and, to cover all my bases, 
+        you may contact @${emer} incase of emergency. 
+        Oh, and one last thing: ${lastWord}`;
+    iname.innerHTML = name.value;
+
+    infoBox.classList.remove("hidden");
+    displayTinderPicks(liked);
+}
 
 
 

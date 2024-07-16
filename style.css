@@ -234,6 +234,7 @@ footer{
    text-align: right;
    margin-top: 0;
    margin-right: 25px;
+   margin-bottom: 5px;
    font-family: "playwrite";
    font-size: 24px;
    font-weight: bold;
@@ -258,6 +259,29 @@ footer{
    writing-mode: vertical-lr;
    background-color: #4CAF50;
  }
+
+ #prompt{
+   font-family: 'chiller';
+   font-size: 2rem;
+   color: white;
+   text-align: center;
+ }
+
+ #get-prompt{
+   font-family: 'bybsy';
+ }
+ 
+ #get-prompt:hover {
+   background-image: linear-gradient(rgb(0 0 0/40%) 0 0);
+ }
+
+#prompt-box{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 10px;
+   margin-bottom: 10px;
+}
 
  #sleepover{
    display: flex;
@@ -336,7 +360,7 @@ footer{
    align-items: baseline;
    justify-content: center;
    margin-top: 10px;
-   margin-bottom: 10px;
+   margin-bottom: 20px;
 }
 
 #image-container{
@@ -346,7 +370,7 @@ footer{
 }
 
 .tinder-button{
-   box-shadow: 0px 0px 14px 2px rgb(80, 79, 79);
+   box-shadow: 0px 0px 14px 5px rgb(80, 79, 79);
 	/* background:linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%); */
 	background-color:white;
 	border-radius:50px;
@@ -362,13 +386,21 @@ footer{
 #heart-button{
    color: green;
    font-size: 40px;
-   
-
 }
 
 #x-button{
    color: red;
    font-size: 40px;
+}
+
+#tinder-friends {
+   display: flex;
+   flex-wrap: wrap;
+}
+#tinder-friends img {
+   max-width: 50px;
+   margin: 2px;
+   border-radius: 50%;
 }
 
 #submit {
