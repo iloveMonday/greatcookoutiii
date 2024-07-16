@@ -57,7 +57,7 @@ subAdd.addEventListener("click", () =>{
     // newSub.checked = true;
     let newSubLab = document.createElement("label");
     newSubLab.for = "sub";
-    newSubLab.innerHTML = "Subscribed"
+    newSubLab.innerHTML = " Subscribed"
     subDiv.appendChild(newSub);
     subDiv.appendChild(newSubLab);
     endlessSub.appendChild(subDiv)
