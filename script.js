@@ -274,18 +274,20 @@ like.addEventListener("click", () =>{
     addLike(liked, source);
     removeItem(images, source);
     displayRandomImage();
+    displayTinderPicks(liked);
 })
 
 dislike.addEventListener("click", () =>{
     removeItem(images, source);
     displayRandomImage();
+    displayTinderPicks(liked);
 })
 
 displayRandomImage();
 
 function displayTinderPicks(likelist){
     var tinCont = document.getElementById("tinder-friends");
-
+    tinCont.innerHTML = "";
     likelist.forEach(src => {
         const img = document.createElement('img');
         img.src = src;
@@ -330,7 +332,7 @@ function displayRSVP(){
     iname.innerHTML = name.value;
 
     infoBox.classList.remove("hidden");
-    displayTinderPicks(liked);
+    // displayTinderPicks(liked);
 }
 
 
