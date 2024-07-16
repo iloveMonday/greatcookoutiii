@@ -189,7 +189,7 @@ function displayRSVP(){
 
     info.innerHTML = `Hey thanks for the invite! 
         This is my RSVP to inform you that I am ${rsvp.value} to your cookout.
-        I plan on bringing ${bring} 
+        I know it's totally option, but I plan on bringing ${bring} 
         and, of course, my signature wicked 'tude. 
         I  probably ${nighty} be wanting to sleep over, and if I do I am aware there is but 1 couch, and even fewer pillows. I am prepared; both for these obstacles and to have the time of my life. 
         With me I will be bringing about ${guestSlider.value} more friends who will surely enrich the social climate of this gathering. 
@@ -203,6 +203,97 @@ function displayRSVP(){
 
 
 
+
+const images = [
+    './animals/senator.jpg',
+    './animals/magicians.jpg',
+    './animals/armadillo.jpg',
+    './animals/mandrill.jpg',
+    './animals/elephant.jpg',
+    './animals/camel.jpg',
+    './animals/clownfish.jpg', 
+    './animals/albatross.jpg', 
+    './animals/sloth.jpg', 
+    './animals/orca.jpg', 
+    './animals/spidercrab.jpg', 
+    './animals/necklizard.jpg', 
+    './animals/wombat.jpg', 
+    './animals/grizzly.jpg', 
+    './animals/plattypus.jpg', 
+    './animals/rhinobeetle.jpg', 
+    './animals/ayeaye.jpg', 
+    './animals/prayingmantis.jpg', 
+    './animals/parrotfish.jpg', 
+    './animals/okapi.jpg', 
+    './animals/jerboa.jpg', 
+    './animals/flamingo.jpg', 
+    './animals/viper.jpg', 
+    './animals/monkey.jpg', 
+    './animals/frog.jpg', 
+    './animals/dolphin.jpg', 
+    './animals/mousedeer.jpg', 
+    './animals/hippo.jpg', 
+    './animals/cassowary.jpg', 
+    './animals/puffin.jpg', 
+    './animals/axolotl.jpg', 
+    './animals/hummer.jpg', 
+    './animals/puffer.jpg', 
+    './animals/quokka.jpg', 
+    './animals/sunbear.jpg', 
+    './animals/wolf.jpg'
+];
+
+let liked = [];
+let source = ""
+
+function getRandomImage() {
+    if (images.length > 0){
+    const randomIndex = Math.floor(Math.random() * images.length);
+    return images[randomIndex];}
+    else {
+        return './media/gcoddish.jpg'
+    }
+}
+
+function displayRandomImage() {
+    const imgElement = document.getElementById('random-image');
+    source = getRandomImage();
+    imgElement.src = source;
+}
+
+function addLike(arr, src){
+    if (!arr.includes(src)){
+        arr.push(src);
+    }
+}
+
+function removeItem(arr, src){
+    const index = arr.indexOf(src);
+    if (index !== -1) {
+        arr.splice(index, 1);
+    }
+}
+
+let like = document.getElementById("heart-button");
+let dislike = document.getElementById("x-button");
+
+like.addEventListener("click", () =>{
+    addLike(liked, source)
+    console.log(liked);
+    displayRandomImage();
+})
+
+dislike.addEventListener("click", () =>{
+    removeItem(images, source);
+    displayRandomImage();
+})
+
+displayRandomImage();
+
+
+
+
+
 let submit = document.getElementById("submit");
 
 submit.addEventListener("click", () => {
@@ -210,3 +301,7 @@ submit.addEventListener("click", () => {
     displayRSVP();
 
 })
+
+
+
+

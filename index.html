@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css"/>
     <script src="./script.js" defer></script>
     <title>I Saw You (at the barbeque)</title>
+    <link rel="icon" href="https://static.wikia.nocookie.net/sawfilms/images/4/4a/Site-favicon.ico/revision/latest?cb=20231021114956">
+    
 </head>
 <body>
     <img src="./media/cookout2024.jpg" alt="cookout-2024-invite" id="banner">
@@ -16,26 +19,26 @@
                 <fieldset class="personal">
                     <legend>First of All...</legend>
                     <label id="name-label" class="topic">Who Am I Speaking With?</label> <br>
-                    <input id="name" class="pert" required type="text" placeholder="Belinda Pencil"></input>
+                    <input id="name" class="pert" required type="text" maxlength="40" placeholder="Belinda Pencil"></input>
                     <br><br>
     
                     <label for="emergency" class="topic">Emergency Contact (instagram only):</label><br>
                     <span class="at">@</span>
-                    <input type="text" id="emergency" class="pert" placeholder="kekeupdate">
+                    <input type="text" id="emergency" class="pert" maxlength="30" placeholder="kekeupdate">
                     <br><br>
     
     
                     <label id="email-label" for="email" class="topic">What is Your Email? (please skip):</label> <br>
-                    <input id="email" class="pert" type="email" placeholder="absolutelydonotskip@billy.net"></input>
+                    <input id="email" class="pert" type="email" maxlength="40" placeholder="absolutelydonotskip@billy.net"></input>
                     <br><br>
     
                     <label for="confirm-email" class="topic">Please Confirm Your Email:</label><br>
                     <input type="radio" id="yes" value="yes" name="confirm-email">
-                    <label for="">that is my email.</label><br>
+                    <label for="" class="confirm">that is my email.</label><br>
                     <input type="radio" id="never" value="never" name="confirm-email">
-                    <label for="">I've never seen that email before in my life.</label><br>
+                    <label for="" class="confirm">I've never seen that email before in my life.</label><br>
                     <input type="radio" id="help" value="help" name="confirm-email">
-                    <label for="help">sure could use a little help remembering...</label>
+                    <label for="help" class="confirm">sure could use a little help remembering...</label>
                     <br><br>
     
                     <div id="sub-box">
@@ -63,10 +66,10 @@
 
                     
                     <label for="additional">How Many Add'l Guests Will You Be Bringing?</label><br>
-                    <span id="guest-note">Select All That are Gluten-Free, Vegan, Gemini, Accomplished or Unwed.
+                    <span id="guest-note">Please Click All That are Gluten-Free, Vegan, Gemini, Accomplished or Unwed.
                         </span>
                     <div class="add-guests-slider">
-                        <input type="range" min="0" max="333" value="0" class="slider" id="guest-slider">
+                        <input type="range" min="0" max="301" value="0" class="slider" id="guest-slider">
                      </div>
 
                      <div id="guest-box">
@@ -126,7 +129,7 @@
                     <div class="flame">
                         <label for="flame" class="topic">To Set Upon the Open Flame:</label>
                             <label for="meat"><input type="checkbox" name="box" value="land meat">land meat</label>
-                            <label for="seafood"><input type="checkbox" name="box" value="a lil somethin' fomr the sea">a lil somethin' from the sea</label>
+                            <label for="seafood"><input type="checkbox" name="box" value="a lil somethin' from the sea">a lil somethin' from the sea</label>
                             <label for="vegetable"><input type="checkbox" name="box" value="a vegetable">a vegetable</label>
                             <label for="vegmeat"><input type="checkbox" name="box" value="tofu pup (and allies)">tofu pup (and allies)</label>
                             <label for="mushroom"><input type="checkbox" name="box" value="the fruiting body of a fungus">the fruiting body of a fungus</label>
@@ -176,6 +179,11 @@
     <div id="tinder">
 
 
+        <button id="x-button" class="tinder-button">X</button>
+        <div id="image-container">
+            <img id="random-image" src="" alt="Random Image">
+        </div>
+        <button id="heart-button" class="tinder-button">♥︎</button>
 
 
 
@@ -209,11 +217,11 @@
             that has been shed, I assure you, this time, salvation can be yours.
             The rules are simple: make sure  you've filled out the entire form, 
             smash that red button, screenshot the letter
-            below, and text it to Toni at <span class="pnum">508.410.8286</span>. <br><br>
+            below, and text it to Tony at <span class="pnum">508.410.8286</span>. <br><br>
             But there are no shortcuts in life so before you do, I request your
-            frankness once more: did u like my website?
+            frankness once more:<br> did u like my website?
         </p>
-        <textarea name="comment" id="comment" placeholder="" cols="30" rows="5"></textarea>
+        <textarea name="comment" id="comment" placeholder="" cols="30" rows="5" maxlength="200"></textarea>
     </div>
     
     <button id="submit">submish</button>
