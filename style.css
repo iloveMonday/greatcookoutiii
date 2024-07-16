@@ -372,11 +372,17 @@ footer{
 
 #tinder{
    display: grid;
-   grid-template-columns: 1fr 50% 1fr;
+   grid-template-rows: 1fr 100px;
    align-items: baseline;
    justify-content: center;
    margin-top: 10px;
-   margin-bottom: 20px;
+   margin-bottom: 10px;
+}
+.button-box{
+   display: flex;
+   margin-top: 5px;
+   margin-bottom: 0;
+   gap: 100px
 }
 
 #image-container{
@@ -390,6 +396,7 @@ footer{
 	/* background:linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%); */
 	background-color:white;
 	border-radius:50px;
+   width: 90px;
 	/* border:1px solid #18ab29; */
 	display:inline-block;
 	cursor:pointer;
