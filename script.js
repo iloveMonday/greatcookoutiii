@@ -297,7 +297,6 @@ function displayTinderPicks(likelist){
 
 
 function displayRSVP(){
-    document.getElementById("tinder-friends").innerHTML = "";
     let infoBox = document.getElementById("info");
     let info = document.getElementById("info-body");
     let iname = document.getElementById("iname");

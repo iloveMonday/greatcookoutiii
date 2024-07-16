@@ -302,6 +302,7 @@ footer{
 .playme{
    width: 40%;
    max-width: 200px;
+   margin-top: 10px;
 }
 
 #seealso{
@@ -361,6 +362,12 @@ footer{
    border: 4px solid black;
    outline: 4px solid #3885d6;
    border-radius: 5px;
+}
+
+.rules{
+   color: white;
+   font-size: .9rem;
+   font-weight: bold;
 }
 
 #tinder{
